@@ -42,20 +42,23 @@
         }
 
         .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-svg {
+            height: 60px;
+            width: auto;
+        }
+
+        .logo-text {
             font-family: 'Playfair Display', serif;
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 900;
             color: #d4af37;
             text-transform: uppercase;
-            letter-spacing: 3px;
-        }
-
-        .logo::before {
-            content: '♛ ';
-        }
-
-        .logo::after {
-            content: ' ♛';
+            letter-spacing: 2px;
         }
 
         .nav-links {
@@ -441,11 +444,20 @@
         }
 
         .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: #d4af37;
             margin-bottom: 2rem;
             font-weight: 700;
+        }
+
+        .footer-logo-svg {
+            height: 50px;
+            width: auto;
         }
 
         .footer-links {
@@ -503,6 +515,18 @@
             .social-icons {
                 gap: 1rem;
             }
+            
+            .logo-svg {
+                height: 40px;
+            }
+            
+            .logo-text {
+                font-size: 1.8rem;
+            }
+            
+            .footer-logo-svg {
+                height: 35px;
+            }
         }
     </style>
 </head>
@@ -510,7 +534,82 @@
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Luxoré</div>
+            <div class="logo">
+                <svg class="logo-svg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#d4af37;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#b8860b;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Crown -->
+                    <g fill="url(#goldGradient)">
+                        <!-- Crown base -->
+                        <rect x="320" y="180" width="160" height="20" rx="10"/>
+                        <!-- Crown spikes -->
+                        <polygon points="340,180 360,140 380,180"/>
+                        <polygon points="360,180 380,120 400,180"/>
+                        <polygon points="380,180 400,110 420,180"/>
+                        <polygon points="400,180 420,120 440,180"/>
+                        <polygon points="420,180 440,140 460,180"/>
+                        <!-- Crown jewels -->
+                        <circle cx="350" cy="170" r="3"/>
+                        <circle cx="370" cy="165" r="4"/>
+                        <circle cx="400" cy="160" r="5"/>
+                        <circle cx="430" cy="165" r="4"/>
+                        <circle cx="450" cy="170" r="3"/>
+                    </g>
+                    
+                    <!-- Left Winged Horse -->
+                    <g fill="url(#goldGradient)">
+                        <!-- Horse head -->
+                        <ellipse cx="180" cy="250" rx="25" ry="35" transform="rotate(-15 180 250)"/>
+                        <!-- Horse mane -->
+                        <path d="M160 230 Q140 220 130 240 Q140 250 155 245 Q165 235 160 230"/>
+                        <path d="M165 240 Q145 235 135 255 Q145 265 160 260 Q170 250 165 240"/>
+                        <!-- Horse neck -->
+                        <ellipse cx="200" cy="280" rx="15" ry="40" transform="rotate(-10 200 280)"/>
+                        <!-- Wings -->
+                        <path d="M160 260 Q100 240 80 280 Q90 320 130 310 Q150 290 160 260"/>
+                        <path d="M170 270 Q110 260 95 295 Q105 325 140 320 Q165 295 170 270"/>
+                        <path d="M180 280 Q125 275 115 305 Q125 330 155 330 Q175 305 180 280"/>
+                        <!-- Wing details -->
+                        <path d="M140 270 Q120 265 110 280 Q115 295 135 290" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+                        <path d="M150 285 Q130 280 125 295 Q130 305 145 305" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+                    </g>
+                    
+                    <!-- Right Winged Horse -->
+                    <g fill="url(#goldGradient)">
+                        <!-- Horse head -->
+                        <ellipse cx="620" cy="250" rx="25" ry="35" transform="rotate(15 620 250)"/>
+                        <!-- Horse mane -->
+                        <path d="M640 230 Q660 220 670 240 Q660 250 645 245 Q635 235 640 230"/>
+                        <path d="M635 240 Q655 235 665 255 Q655 265 640 260 Q630 250 635 240"/>
+                        <!-- Horse neck -->
+                        <ellipse cx="600" cy="280" rx="15" ry="40" transform="rotate(10 600 280)"/>
+                        <!-- Wings -->
+                        <path d="M640 260 Q700 240 720 280 Q710 320 670 310 Q650 290 640 260"/>
+                        <path d="M630 270 Q690 260 705 295 Q695 325 660 320 Q635 295 630 270"/>
+                        <path d="M620 280 Q675 275 685 305 Q675 330 645 330 Q625 305 620 280"/>
+                        <!-- Wing details -->
+                        <path d="M660 270 Q680 265 690 280 Q685 295 665 290" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+                        <path d="M650 285 Q670 280 675 295 Q670 305 655 305" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+                    </g>
+                    
+                    <!-- Shield -->
+                    <g fill="url(#goldGradient)">
+                        <path d="M300 320 Q300 300 320 300 L480 300 Q500 300 500 320 L500 400 Q500 440 450 460 Q400 470 400 470 Q400 470 350 460 Q300 440 300 400 Z"/>
+                        <!-- Shield border -->
+                        <path d="M300 320 Q300 300 320 300 L480 300 Q500 300 500 320 L500 400 Q500 440 450 460 Q400 470 400 470 Q400 470 350 460 Q300 440 300 400 Z" 
+                              fill="none" stroke="#b8860b" stroke-width="4"/>
+                        <!-- Letter L -->
+                        <text x="400" y="420" font-family="Playfair Display" font-size="80" font-weight="bold" text-anchor="middle" fill="#b8860b">L</text>
+                    </g>
+                </svg>
+                <span class="logo-text">Luxoré</span>
+            </div>
             <ul class="nav-links">
                 <li><a onclick="showPage('home')">Home</a></li>
                 <li><a onclick="showPage('products')">Produkte</a></li>
@@ -677,167 +776,4 @@
                         <a href="#" class="partner-link">Homepage</a>
                     </div>
                 </div>
-                <div class="partner-card">
-                    <h4>Umbrella Kreativshop</h4>
-                    <p>Einzigartige Kreativprodukte und handgefertigte Artikel</p>
-                    <div style="margin-top: 1rem;">
-                        <a href="#" class="partner-link">Instagram</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Contact Page -->
-    <div id="contact" class="page-section">
-        <section class="form-section">
-            <div class="section-header">
-                <h2>Kontakt</h2>
-                <p class="section-subtitle">Haben Sie Fragen? Wir sind für Sie da</p>
-            </div>
-
-            <div class="form-container">
-                <h3>Kontaktieren Sie uns</h3>
-                <form onsubmit="submitContact(event)">
-                    <div class="form-group">
-                        <label>Ihr Name:</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>E-Mail-Adresse:</label>
-                        <input type="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Betreff:</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Ihre Nachricht:</label>
-                        <textarea rows="4" placeholder="Ihre Nachricht an uns..." required></textarea>
-                    </div>
-                    <button type="submit" class="submit-btn">Nachricht senden</button>
-                </form>
-            </div>
-        </section>
-    </div>
-
-    <!-- Legal Pages -->
-    <div id="impressum" class="page-section">
-        <section class="legal-section">
-            <h2 style="color: #d4af37; font-family: 'Playfair Display', serif; font-size: 3rem; text-align: center; margin-bottom: 2rem;">Impressum</h2>
-            <div class="legal-content">
-                <h3>Angaben gemäß § 5 DDG</h3>
-                <p><strong>Stefan Korhammer</strong><br>
-                Sternberger Str. 3<br>
-                86690 Mertingen<br>
-                Deutschland</p>
-
-                <h3>Kontakt</h3>
-                <p>E-Mail: info@luxore.de<br>
-                Telefon: [Ihre Telefonnummer]</p>
-
-                <h3>Hinweise zum Jugendschutz</h3>
-                <p>Der Verkauf von alkoholischen Getränken ist nur an Personen ab 18 Jahren gestattet. Kein Versandhandel - nur Abholung vor Ort mit Altersverifikation.</p>
-            </div>
-        </section>
-    </div>
-
-    <div id="datenschutz" class="page-section">
-        <section class="legal-section">
-            <h2 style="color: #d4af37; font-family: 'Playfair Display', serif; font-size: 3rem; text-align: center; margin-bottom: 2rem;">Datenschutzerklärung</h2>
-            <div class="legal-content">
-                <h3>1. Datenschutz auf einen Blick</h3>
-                <p>Die folgenden Hinweise geben einen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen.</p>
-
-                <h3>2. Verantwortliche Stelle</h3>
-                <p>Stefan Korhammer<br>
-                Sternberger Str. 3<br>
-                86690 Mertingen<br>
-                E-Mail: info@luxore.de</p>
-
-                <h3>3. Ihre Rechte</h3>
-                <p>Sie haben jederzeit das Recht auf Auskunft, Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer personenbezogenen Daten.</p>
-
-                <h3>4. Besondere Hinweise</h3>
-                <p>Diese Website bewirbt alkoholische Getränke. Der Zugang ist nur Personen ab 18 Jahren gestattet.</p>
-            </div>
-        </section>
-    </div>
-
-    <div id="agb" class="page-section">
-        <section class="legal-section">
-            <h2 style="color: #d4af37; font-family: 'Playfair Display', serif; font-size: 3rem; text-align: center; margin-bottom: 2rem;">AGB</h2>
-            <div class="legal-content">
-                <h3>1. Geltungsbereich</h3>
-                <p>Diese AGB gelten für alle Verträge zwischen Stefan Korhammer und dem Kunden über die Abgabe von alkoholischen Getränken.</p>
-
-                <h3>2. Abholung</h3>
-                <p>Kein Versandhandel! Alle Waren müssen persönlich abgeholt werden. Bei alkoholischen Getränken erfolgt die Übergabe nur an Personen ab 18 Jahren.</p>
-
-                <h3>3. Jugendschutz</h3>
-                <p>Der Verkauf alkoholischer Getränke ist nur an Personen ab 18 Jahren gestattet. Bei der Abholung ist das Alter durch Ausweiskontrolle nachzuweisen.</p>
-            </div>
-        </section>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-logo">♛ Luxoré ♛</div>
-            <div class="footer-links">
-                <a onclick="showPage('impressum')">Impressum</a>
-                <a onclick="showPage('datenschutz')">Datenschutz</a>
-                <a onclick="showPage('agb')">AGB</a>
-            </div>
-            <p style="margin: 2rem 0;">&copy; 2025 Luxoré. Alle Rechte vorbehalten.</p>
-            
-            <div class="footer-warning">
-                <strong>⚠️ WICHTIGER HINWEIS ⚠️</strong><br><br>
-                <strong>Verantwortungsvoller Genuss von Alkohol</strong><br>
-                Der Verkauf erfolgt ausschließlich an Personen ab 18 Jahren.<br>
-                Bitte trinken Sie verantwortungsvoll und in Maßen.<br><br>
-                <em>Luxoré Premium-Spirituosen - Exklusivität seit 2025</em>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        function showPage(pageId) {
-            // Hide all pages
-            const pages = document.querySelectorAll('.page-section');
-            pages.forEach(page => page.classList.remove('active'));
-            
-            // Show selected page
-            const targetPage = document.getElementById(pageId);
-            if (targetPage) {
-                targetPage.classList.add('active');
-            }
-            
-            // Scroll to top
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        function openDM() {
-            const choice = confirm("Möchten Sie uns über WhatsApp (OK) oder Instagram (Abbrechen) kontaktieren?");
-            
-            if (choice) {
-                alert("Bitte tragen Sie Ihre WhatsApp-Nummer in den Code ein.");
-            } else {
-                window.open("https://www.instagram.com/direct/new/", '_blank');
-            }
-        }
-
-        function submitFeedback(event) {
-            event.preventDefault();
-            alert('Vielen Dank für Ihr Feedback! Wir haben Ihre Nachricht erhalten.');
-            event.target.reset();
-        }
-
-        function submitContact(event) {
-            event.preventDefault();
-            alert('Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.');
-            event.target.reset();
-        }
-    </script>
-</body>
-</html>
+                <div class="partner-car
